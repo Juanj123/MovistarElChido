@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoMovistar", "ProyectoMovistar\ProyectoMovistar.csproj", "{BDDCF299-1549-4D6D-9FFA-664F86774515}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capaPresentacion", "ProyectoMovistar\capaPresentacion.csproj", "{BDDCF299-1549-4D6D-9FFA-664F86774515}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capaDatos", "capaDatos\capaDatos.csproj", "{65B2954F-1B0F-4668-BE90-726FD6E66F80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capaPojos", "capaPojos\capaPojos.csproj", "{34CCA0E7-EE2C-4777-A503-6AA5F475F72A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{BDDCF299-1549-4D6D-9FFA-664F86774515}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDDCF299-1549-4D6D-9FFA-664F86774515}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDDCF299-1549-4D6D-9FFA-664F86774515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65B2954F-1B0F-4668-BE90-726FD6E66F80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65B2954F-1B0F-4668-BE90-726FD6E66F80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65B2954F-1B0F-4668-BE90-726FD6E66F80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65B2954F-1B0F-4668-BE90-726FD6E66F80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34CCA0E7-EE2C-4777-A503-6AA5F475F72A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34CCA0E7-EE2C-4777-A503-6AA5F475F72A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34CCA0E7-EE2C-4777-A503-6AA5F475F72A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34CCA0E7-EE2C-4777-A503-6AA5F475F72A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
