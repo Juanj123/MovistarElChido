@@ -9,7 +9,7 @@ using MySql.Data.MySqlClient;
 
 namespace capaDatos
 {
-    class clsDatosVenta
+    public class clsDatosVenta
     {
         clsConexion cone = new clsConexion();
         public void AgregarProducto(clsVenta objProducto)
@@ -32,6 +32,52 @@ namespace capaDatos
             cm.Connection = cone.cn;
             cm.ExecuteNonQuery();
             cone.cerrar();
+        }
+
+        public List<clsInventario> getProducto()
+        {
+            cone.conectar();
+            List<clsInventario> lstUsuarios = new List<clsInventario>();
+            string sql;
+            MySqlCommand cm = new MySqlCommand();
+            MySqlDataReader dr;
+            sql = "select nombre from inventario;";
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = cone.cn;
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                clsInventario objAl = new clsInventario();
+                objAl.Nombre = dr.GetString("nombre");
+                lstUsuarios.Add(objAl);
+            }
+            cone.cerrar();
+            return lstUsuarios;
+        }
+        public List<clsInventario> getProductos(string producto)
+        {
+            cone.conectar();
+            List<clsInventario> lstUsuarios = new List<clsInventario>();
+            string sql;
+            MySqlCommand cm = new MySqlCommand();
+            MySqlDataReader dr;
+            sql = "select nombre, precio, existencia, descripcion from inventario where nombre = '"+producto+"';";
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = cone.cn;
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                clsInventario objAl = new clsInventario();
+                objAl.Nombre = dr.GetString("nombre");
+                objAl.Precio = dr.GetDouble("precio");
+                objAl.Existencia = dr.GetInt32("existencia");
+                objAl.Descripcion = dr.GetString("descripcion");
+                lstUsuarios.Add(objAl);
+            }
+            cone.cerrar();
+            return lstUsuarios;
         }
     }
 }
