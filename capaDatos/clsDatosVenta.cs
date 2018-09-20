@@ -79,5 +79,25 @@ namespace capaDatos
             cone.cerrar();
             return lstUsuarios;
         }
+        public int cantidad(string producto)
+        {
+            cone.conectar();
+            int numero = 0;
+            string sql;
+            MySqlCommand cm = new MySqlCommand();
+            MySqlDataReader dr;
+            sql = "select existencia from inventario where nombre = '" + producto + "';";
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = cone.cn;
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                clsInventario objUs = new clsInventario();
+                numero = objUs.Existencia = dr.GetInt32("existencia");
+            }
+            cone.cerrar();
+            return numero;
+        }
     }
 }
