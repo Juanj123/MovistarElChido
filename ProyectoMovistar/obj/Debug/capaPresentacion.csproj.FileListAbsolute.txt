@@ -91,3 +91,4 @@ C:\Users\Angel\Documents\otroRepo\MovistarElChido\ProyectoMovistar\obj\Debug\cap
 C:\Users\Angel\Documents\otroRepo\MovistarElChido\ProyectoMovistar\obj\Debug\capaPresentacion.csproj.CopyComplete
 C:\Users\Angel\Documents\otroRepo\MovistarElChido\ProyectoMovistar\obj\Debug\ProyectoMovistar.exe
 C:\Users\Angel\Documents\otroRepo\MovistarElChido\ProyectoMovistar\obj\Debug\ProyectoMovistar.pdb
+C:\Users\Angel\Documents\otroRepo\MovistarElChido\ProyectoMovistar\obj\Debug\ProyectoMovistar.recuperarContrasenia.resources

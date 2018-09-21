@@ -11,7 +11,7 @@ using System.Net.Mail;
 
 namespace capaDatos
 {
-    class clsDatosLogin
+    public class clsDatosLogin
     {
         private clsConexion conexion = new clsConexion();
         private string email, nombre, contrasenia, mensaje;
@@ -47,7 +47,7 @@ namespace capaDatos
         {
             // se configura el mensaje del correo
             MailMessage correo = new MailMessage();
-            correo.From = new MailAddress("angelalvarezguzman@gmail.com");
+            correo.From = new MailAddress("generalsolutionsti@gmail.com");
             correo.To.Add(email);
             correo.Subject = ("Recuperar contraseña");
             correo.Body = "Hola, " + nombre + " Usted solicito recuperar contreseña. \n Su contraseña es: " + contrasenia;
@@ -55,7 +55,7 @@ namespace capaDatos
 
             // configuracion protoculo SMTP
             SmtpClient serverMail = new SmtpClient();
-            serverMail.Credentials = new NetworkCredential("angelalvarezguzman@gmail.com", "17041994");
+            serverMail.Credentials = new NetworkCredential("generalsolutionsti@gmail.com", "solutions123");
             serverMail.Host = "smtp.gmail.com";
             serverMail.Port = 587;
             serverMail.EnableSsl = true;
