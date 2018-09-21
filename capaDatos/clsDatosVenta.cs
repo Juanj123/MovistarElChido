@@ -34,6 +34,25 @@ namespace capaDatos
             cone.cerrar();
         }
 
+        public void AgregarDVenta(clsDVenta objProducto)
+        {
+            string sql;
+            MySqlCommand cm;
+            cone.conectar();
+            cm = new MySqlCommand();
+            cm.Parameters.AddWithValue("@Folio", objProducto.Folio);
+            cm.Parameters.AddWithValue("@Nombre", objProducto.Nombre);
+            cm.Parameters.AddWithValue("@Precio", objProducto.Precio);
+            cm.Parameters.AddWithValue("@Cantidad", objProducto.Cantidad);
+
+            sql = "insert  into dventa value(@Folio,@Nombre,@Precio,@Cantidad);";
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = cone.cn;
+            cm.ExecuteNonQuery();
+            cone.cerrar();
+        }
+
         public List<clsInventario> getProducto()
         {
             cone.conectar();

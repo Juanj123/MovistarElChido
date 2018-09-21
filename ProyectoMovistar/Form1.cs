@@ -30,7 +30,6 @@ namespace ProyectoMovistar
         {
             int cant = Int32.Parse(cmbCantidad.Text);
             Ventas o = new Ventas();
-            o.cant = cant;
             this.Close();
         }
     }
