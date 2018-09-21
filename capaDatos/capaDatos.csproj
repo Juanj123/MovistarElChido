@@ -49,6 +49,8 @@
   <ItemGroup>
     <Compile Include="clsConexion.cs" />
     <Compile Include="clsDatosInventario.cs" />
+    <Compile Include="clsDatosLogin.cs" />
+    <Compile Include="clsDatosUsuarios.cs" />
     <Compile Include="clsDatosVenta.cs" />
     <Compile Include="clsValidaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

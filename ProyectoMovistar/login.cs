@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using capaDatos;
+using capaPojos;
+
 
 namespace ProyectoMovistar
 {
@@ -91,6 +94,63 @@ namespace ProyectoMovistar
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
 
+        }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            clsLogin login = new clsLogin();
+            clsDatosLogin datosLogin = new clsDatosLogin();
+            if (!cbTipo.Text.Equals(""))
+            {
+                login.Nombre = txtUsuario.Text;
+                login.Contrasenia = txtContraseña.Text;
+                login.Tipo = cbTipo.SelectedItem.ToString();
+                if (login.Nombre == txtUsuario.Text)
+                {
+                    if (login.Contrasenia == txtContraseña.Text)
+                    {
+                        if (datosLogin.iniciarSesionAd(login).Read() == true & cbTipo.SelectedItem.Equals("Administrador"))
+                        {
+                            this.Hide();
+                            //Llamar al formulario Principal
+                            principal frmPrincipal = new principal();
+                            frmPrincipal.Show();
+                        }
+                        else if (datosLogin.iniciarSesionEm(login).Read() == true & cbTipo.SelectedItem.Equals("Empleado"))
+                        {
+                            this.Hide();
+                            //Llamar al formulario Ventas
+                            Ventas frmVentas = new Ventas();
+                            frmVentas.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Usuario o Contraseña incorrecta", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(login.Contrasenia, "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(login.Nombre, "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Campo Tipo de Usuario Vacio o incorrecto", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cbTipo.BackColor = Color.Red;
+                cbTipo.ForeColor = Color.White;
+            }
+        }
+
+        private void linkPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            recuperarContrasenia frmRecupContra = new recuperarContrasenia();
+            frmRecupContra.Show();
         }
     }
 }
