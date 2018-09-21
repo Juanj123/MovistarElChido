@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace capaDatos
 {
-    class clsValidaciones
+    public class clsValidaciones
     {
         public Boolean Nombre(string cadena)
         {
